@@ -13,4 +13,8 @@
   :cljsbuild {:builds
               [{:source-paths ["frontend/src"]
                 :compiler {:output-to "resources/public/js/main.js"
-                           :optimizations :advanced}}]})
+                           :optimizations :advanced}}]}
+   :profiles {:test {:dependencies [[com.h2database/h2 "2.2.224"]
+                                  [ring/ring-mock "0.4.0"]
+                                  [cheshire "5.11.0"]]}
+             :dev {:plugins [[com.jakemccrary/lein-test-refresh "0.25.0"]]}})
