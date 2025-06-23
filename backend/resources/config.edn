@@ -1,5 +1,0 @@
-{:db {:host "localhost"
-      :port 5432
-      :dbname "group_buy"
-      :user "postgres"
-      :password "P@ssw0rd"}}
