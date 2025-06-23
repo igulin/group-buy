@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: group_buy
+      POSTGRES_USER: clojure
+      POSTGRES_PASSWORD: secret
+
+  backend:
+    build: ./backend
+    ports: ["3000:3000"]
+    depends_on: [postgres]
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports: ["8000:8000"]
